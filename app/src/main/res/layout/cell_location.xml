@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="location"
+            type="eni.demo.enidemo.listview.location.Location"
+            />
+    </data>
+    <LinearLayout
+        android:background="#DDDDDD"
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:background="#FF0000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_test"
+            />
+
+        <TextView
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{location.name}"
+            >
+        </TextView>
+
+        <TextView
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{location.description}"
+            >
+        </TextView>
+
+        <ToggleButton
+            android:id="@+id/simpleToggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</layout>

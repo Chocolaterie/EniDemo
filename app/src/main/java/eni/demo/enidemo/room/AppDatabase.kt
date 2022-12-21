@@ -1,7 +1,6 @@
 package eni.demo.enidemo.room
 
 import android.content.Context
-import android.location.Location
 import android.provider.ContactsContract
 import androidx.lifecycle.ViewModelProvider.NewInstanceFactory.Companion.instance
 import androidx.room.Database
@@ -9,13 +8,15 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import eni.demo.enidemo.listview.Person
+import eni.demo.enidemo.listview.location.Location
 
 
-@Database(entities = arrayOf(Person::class), version = 1)
+@Database(entities = arrayOf(Person::class, Location::class), version = 1)
 abstract class AppDatabase : RoomDatabase() {
 
     // La dao person
     abstract fun personDao(): PersonDao
+    abstract fun locationDao(): LocationDao
 
     companion object {
         // Singleton de la basse de données

@@ -3,6 +3,7 @@ package eni.demo.enidemo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import eni.demo.enidemo.listview.ListPersonFragment
+import eni.demo.enidemo.listview.location.ListLocationFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -10,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, ListPersonFragment.newInstance())
+                .replace(R.id.container, ListLocationFragment.newInstance())
                 .commitNow()
         }
     }

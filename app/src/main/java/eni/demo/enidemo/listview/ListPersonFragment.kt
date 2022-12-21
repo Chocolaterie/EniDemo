@@ -1,5 +1,6 @@
 package eni.demo.enidemo.listview
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -45,7 +46,7 @@ class ListPersonFragment : Fragment() {
         binding.rvPersonnes.adapter = adapter
 
         // Connecter ma liste de personne de mon listPersonViewModel à mon adapter
-
+        /*
         var listTest =  listOf<Person>(
             Person(0, "Test", "Test"),
             Person(0, "Thomas", "Test"),
@@ -53,6 +54,28 @@ class ListPersonFragment : Fragment() {
 
         // Dans mon adapter
         adapter.submitList(listTest)
+         */
+
+        listPersonViewModel.persons.observe(viewLifecycleOwner,
+            Observer { it?.let { adapter.submitList(it) } })
+
+        binding.btnGetPerson.setOnClickListener { it: View? ->
+            run {
+                val thread = Thread {
+                    listPersonViewModel.initPersons()
+                }
+                thread.start()
+            }
+        }
+
+        binding.btnDeletePerson.setOnClickListener { it: View? ->
+            run {
+                val thread = Thread {
+                    listPersonViewModel.deletePersons()
+                }
+                thread.start()
+            }
+        }
 
         return binding.root
     }

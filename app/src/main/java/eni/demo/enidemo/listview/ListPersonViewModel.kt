@@ -12,8 +12,12 @@ class ListPersonViewModel(val personDao: PersonDao, application: Application) : 
     var persons = personDao.getAll()
 
     fun initPersons(){
-        // personDao.insert(Person(1, "Isaac", "Schartier"))
-        //persons = personDao.getAll()
-        //persons.add(Person(0, "Isaac", "Schartier"))
+        personDao.insert(Person(0, "Isaac", "Schartier"))
+        persons = personDao.getAll()
+    }
+
+    fun deletePersons(){
+        personDao.deleteAll()
+        persons = personDao.getAll()
     }
 }

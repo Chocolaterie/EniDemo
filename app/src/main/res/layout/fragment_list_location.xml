@@ -5,14 +5,14 @@
 
     <data>
         <variable
-            name="listPersonViewModel"
-            type="eni.demo.enidemo.listview.ListPersonViewModel" />
+            name="listLocationViewModel"
+            type="eni.demo.enidemo.listview.location.ListLocationViewModel" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".demolistview.ListPersonFragment">
+        tools:context=".demolistview.ListLocationFragment">
 
         <LinearLayout
             android:orientation="vertical"
@@ -20,19 +20,14 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/btn_delete_person"
+                android:id="@+id/btn_get_locations"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Supprimer toute personnes" />
+                android:text="Get all locations" />
 
-            <Button
-                android:id="@+id/btn_get_person"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Creer une personne" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_personnes"
+                android:id="@+id/rv_locations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
