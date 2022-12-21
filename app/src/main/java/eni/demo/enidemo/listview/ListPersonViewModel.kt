@@ -9,7 +9,7 @@ import eni.demo.enidemo.room.PersonDao
 class ListPersonViewModel(val personDao: PersonDao, application: Application) : AndroidViewModel(application) {
 
     // On récupère la liste de toute les personnes par défaut
-    var persons = mutableListOf<Person>(Person(0, "Isaac", "Schartier"))
+    var persons = personDao.getAll()
 
     fun initPersons(){
         // personDao.insert(Person(1, "Isaac", "Schartier"))

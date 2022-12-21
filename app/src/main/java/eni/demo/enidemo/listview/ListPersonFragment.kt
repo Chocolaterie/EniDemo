@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import eni.demo.enidemo.R
 import eni.demo.enidemo.databinding.FragmentListPersonBinding
+import eni.demo.enidemo.room.AppDatabase
 import eni.demo.enidemo.room.ViewModelFactory
 import kotlinx.coroutines.launch
 
@@ -38,20 +39,20 @@ class ListPersonFragment : Fragment() {
         binding.listPersonViewModel = listPersonViewModel
         binding.lifecycleOwner = this
 
-        binding.btnLancerDe.setOnClickListener { it: View? ->
-            run {
-                listPersonViewModel.initPersons()
 
-            }
-        }
         // connecter l'adapter du reclycer view
         val adapter = ListPersonAdapter()
         binding.rvPersonnes.adapter = adapter
 
         // Connecter ma liste de personne de mon listPersonViewModel à mon adapter
 
-        listPersonViewModel.persons.observe(viewLifecycleOwner,
-            Observer { it?.let { adapter.submitList(it) } })
+        var listTest =  listOf<Person>(
+            Person(0, "Test", "Test"),
+            Person(0, "Thomas", "Test"),
+            Person(0, "Fabrice", "Test"))
+
+        // Dans mon adapter
+        adapter.submitList(listTest)
 
         return binding.root
     }
