@@ -59,4 +59,11 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
     testImplementation "androidx.room:room-testing:$room_version"
+
+    // dépendances API
+    def mosh_version="1.14.0"
+    implementation("com.squareup.moshi:moshi:$mosh_version")
+    implementation("com.squareup.moshi:moshi-kotlin:$mosh_version")
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+
 }

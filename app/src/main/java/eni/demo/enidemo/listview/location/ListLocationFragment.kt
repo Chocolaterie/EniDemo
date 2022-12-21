@@ -1,6 +1,5 @@
 package eni.demo.enidemo.listview.location
 
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,15 +8,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import eni.demo.enidemo.R
+import eni.demo.enidemo.api.Beer
 import eni.demo.enidemo.databinding.FragmentListLocationBinding
-import eni.demo.enidemo.databinding.FragmentListPersonBinding
-import eni.demo.enidemo.listview.ListPersonAdapter
-import eni.demo.enidemo.listview.ListPersonViewModel
-import eni.demo.enidemo.room.AppDatabase
 import eni.demo.enidemo.room.ViewModelFactory
-import kotlinx.coroutines.launch
+import okhttp3.*
+import org.json.JSONArray
+import org.json.JSONObject
+import java.io.IOException
 
 class ListLocationFragment : Fragment() {
 
