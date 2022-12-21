@@ -1,0 +1,30 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="listPersonViewModel"
+            type="eni.demo.enidemo.listview.ListPersonViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".demolistview.ListPersonFragment">
+
+        <Button
+            android:id="@+id/btn_lancer_de"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Creer des peronnes" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_personnes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </FrameLayout>
+
+</layout>
